@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const {Client} = require('pg')
 const cors = require('cors')
-const connectionString = 'postgresql://postgres:cat@127.0.0.1:5432/heisman_stats'
+const connectionString =
 const client = new Client({
     connectionString:connectionString
 });
