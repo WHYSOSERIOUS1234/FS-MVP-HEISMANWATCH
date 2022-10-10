@@ -1,0 +1,19 @@
+.playerName {
+    margin-top: 10px;
+    background-color:orange;
+    font-family:'Arial Narrow Bold', sans-serif
+}
+
+.touchdown {
+    margin-top: 10px;
+    background-color: blue;
+    color: whitesmoke
+}
+
+body {
+    background-color: black;
+}
+
+p {
+    color: whitesmoke
+}

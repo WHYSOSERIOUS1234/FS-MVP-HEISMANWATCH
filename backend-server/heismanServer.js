@@ -34,11 +34,15 @@ client.query(`DELETE FROM watchList WHERE player_id='${player_name}'`)
 res.send('Deleted your garbage player')
 })
 
-app.patch('/watchlist', ()=> {
-    const update = req.body
-    console.log(update)
-    // client.query(`UPDATE sports_tb SET ='${city}' WHERE sport_id=${req.params.id}`)
-})
+app.patch('/watchlist/:id', (req, res) => {
+    const query = 'UPDATE watchList SET player_name = ?, team_name = ?,  player_position = ?,  touchdowns = ?, interceptions = ?,  passing_yards = ?, rushing_yards = ?, TFL = ? WHERE player_id = ?';
+    const params = [req.body.player_name, req.body.team_name, req.body.player_position, req.body.touchdowns, req.params.interceptions, req.params.passing_yards, req.params.rushing_yards, req.params.tfl, req.params.id ];
+    client.query(query, params, (error, result) => {
+      res.send({
+        ok: true,
+      });
+    });
+  });
 
 app.listen(PORT, () => {
     console.log('it works on 3000')
